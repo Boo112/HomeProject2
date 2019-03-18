@@ -83,10 +83,11 @@ public class Parser {
         String country = parserHelper.getCountry(nationality.toString().replace("\"", ""));
 
         return new User(
-                getFormatedData(firstName), getFormatedData(lastName), "no patronymic",
-                getFormatedData(age), getFormatedData(gender), parserHelper.getFormatDate(getFormatedData(dateOfBirth)),
-                getFormatedData(city), street1.replaceAll(house, ""),
-                country, flat, inn, getFormatedData(index), house, getFormatedData(state)
+                parserHelper.getFormatedData(firstName), parserHelper.getFormatedData(lastName), "no patronymic",
+                parserHelper.getFormatedData(age), parserHelper.getFormatedData(gender),
+                parserHelper.getFormatedDate(parserHelper.getFormatedData(dateOfBirth)),
+                parserHelper.getFormatedData(city), street1.replaceAll(house, ""),
+                country, flat, inn, parserHelper.getFormatedData(index), house, parserHelper.getFormatedData(state)
         );
     }
 
@@ -100,14 +101,5 @@ public class Parser {
         }
         return null;
     }
-
-    // Преобразование к нормальному виду данных из Json
-    private String getFormatedData(JsonElement data) {
-
-        return data.toString().replace("\"", "");
-    }
-
-
-
 
 }

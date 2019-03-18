@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41c00680-946f-425e-a995-64a6e2e5f733" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/homeproject/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeproject/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeproject/ParserHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeproject/ParserHelper.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -18,7 +18,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
+            <state relative-caret-position="109">
               <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
@@ -48,10 +48,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="79" column="55" selection-start-line="79" selection-start-column="55" selection-end-line="79" selection-end-column="55" />
+            <state relative-caret-position="405">
+              <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#getUserFromLocalDatabase#0;class#Parser#0" />
+                <element signature="method#getUserFromJSON#0;class#Parser#0" />
                 <element signature="method#getArrayObject#0;class#Parser#0" />
                 <element signature="method#getValue#0;class#Parser#0" />
               </folding>
@@ -71,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/ParserHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="97" selection-start-line="97" selection-end-line="97" />
+            <state relative-caret-position="180">
+              <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
               <folding>
                 <element signature="method#getFormatDate#0;class#ParserHelper#0" />
                 <element signature="method#getHouseFromStreet#0;class#ParserHelper#0" />
@@ -122,6 +124,7 @@
     <findStrings>
       <find>GeneratData</find>
       <find>house</find>
+      <find>getFormatedData</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -218,7 +221,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552922673068" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552923158167" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -266,12 +269,12 @@
       <workItem from="1552856147596" duration="4261000" />
       <workItem from="1552887352876" duration="9277000" />
       <workItem from="1552910575294" duration="2955000" />
-      <workItem from="1552919739724" duration="2654000" />
+      <workItem from="1552919739724" duration="3147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19147000" />
+    <option name="totallyTimeSpent" value="19640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -406,13 +409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/Users.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
@@ -420,10 +416,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/ParserHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        <state relative-caret-position="180">
+          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
           <folding>
             <element signature="method#getFormatDate#0;class#ParserHelper#0" />
             <element signature="method#getHouseFromStreet#0;class#ParserHelper#0" />
@@ -434,10 +437,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="79" column="55" selection-start-line="79" selection-start-column="55" selection-end-line="79" selection-end-column="55" />
+        <state relative-caret-position="405">
+          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#getUserFromLocalDatabase#0;class#Parser#0" />
+            <element signature="method#getUserFromJSON#0;class#Parser#0" />
             <element signature="method#getArrayObject#0;class#Parser#0" />
             <element signature="method#getValue#0;class#Parser#0" />
           </folding>

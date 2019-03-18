@@ -5,7 +5,7 @@ import com.google.gson.JsonElement;
 public class ParserHelper {
 
     // Формируем дату для записи в эксель
-    public String getFormatDate(String dt) {
+    public String getFormatedDate(String dt) {
 
         String day;
         String year;
@@ -95,7 +95,11 @@ public class ParserHelper {
         return country;
     }
 
+    // Преобразование в нормальную отформатированную строку данных из Json
+    public String getFormatedData(JsonElement data) {
 
+        return data.toString().replace("\"", "");
+    }
 
 
 }
