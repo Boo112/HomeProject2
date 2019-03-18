@@ -8,8 +8,6 @@
     <artifactId>InfoUsers</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
-
     <dependencies>
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -48,12 +46,11 @@
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
-
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                
+
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
@@ -86,7 +83,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>
