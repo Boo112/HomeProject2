@@ -12,7 +12,6 @@ public class GeneratData {
 
     Random r = new Random();
 
-
     // метод для получения имен из файла(с учетом случаной выборки из мужских и женских имен)
     public String[] getNamesFromFile(String filename1, String filename2) {
 
@@ -163,7 +162,6 @@ public class GeneratData {
         return age;
 
     }
-
 
     public String[] getNameFromFile(String fileName) {
 
