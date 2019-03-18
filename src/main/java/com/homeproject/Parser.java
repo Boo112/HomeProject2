@@ -10,7 +10,6 @@ import java.util.Random;
 
 public class Parser {
 
-
     GeneratData generatData=new GeneratData();
     PathToFiles fPath=new PathToFiles();
     Random r = new Random();

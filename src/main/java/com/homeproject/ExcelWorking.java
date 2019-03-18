@@ -41,7 +41,6 @@ public class ExcelWorking {
 
             System.out.println("\n" + "Файл создан. " + "Путь: " + file.getAbsolutePath());
 
-
         } catch (Exception ex) {
             System.out.println(ex);
         }

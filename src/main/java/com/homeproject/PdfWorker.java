@@ -18,7 +18,6 @@ class PdfWorker {
 
     void writePDF(String filename, List<User> users) {
 
-
         PDPage myPage = new PDPage(new PDRectangle(PDRectangle.A4.getHeight(), PDRectangle.A4.getWidth()));
         File pdf = new File(filename);
 
@@ -77,7 +76,6 @@ class PdfWorker {
 
         }
         table.draw();
-
 
             mainDocument.addPage(myPage);
             mainDocument.save(pdf);
