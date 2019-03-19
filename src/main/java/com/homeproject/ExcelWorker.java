@@ -41,8 +41,8 @@ public class ExcelWorker {
 
             System.out.println("\n" + "Файл создан. " + "Путь: " + file.getAbsolutePath());
 
-        } catch (Exception ex) {
-            System.out.println(ex);
+        } catch (IOException e) {
+            System.out.println(e);
         }
     }
 
@@ -84,8 +84,8 @@ public class ExcelWorker {
             fileOut.close();
             workbook_ED.close();
 
-        } catch (Exception ex) {
-            System.out.println(ex);
+        } catch (IOException e) {
+            System.out.println(e);
         }
     }
 

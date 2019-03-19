@@ -36,8 +36,8 @@ public class HttpWorker {
 
         } catch (IOException e) {
             System.err.println("Соединение с интенетом прервано, данные формируются из локальной БД...");
-
         }
+
 
         return null;
     }
