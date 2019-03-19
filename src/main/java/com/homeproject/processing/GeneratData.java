@@ -56,19 +56,12 @@ public class GeneratData {
 
     // Генерация даты рождения
     public Date getDataBirth() {
-        Locale local = new Locale("ru", "RU");
-        DateFormat df = DateFormat.getDateInstance(DateFormat.DEFAULT, local);
 
         Date dt;
         long ms;
 
-        // между 1940 and 2010
-
         ms = -946771200000L + (Math.abs(r.nextLong()) % (70L * 365 * 24 * 60 * 60 * 1000));
-
         dt = new Date(ms);
-
-        df.format(dt);
 
         return dt;
     }

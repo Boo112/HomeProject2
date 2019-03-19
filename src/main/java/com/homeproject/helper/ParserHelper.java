@@ -18,7 +18,7 @@ public class ParserHelper {
         year = dt.substring(0, 4);
         day = dt.substring(8, k);
         month = dt.substring(5, 7);
-        date = day + "." + month + "." + year;
+        date = day + "-" + month + "-" + year;
 
         return date;
     }
