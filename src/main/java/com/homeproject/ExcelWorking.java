@@ -78,10 +78,10 @@ public class ExcelWorking {
                 sheet.autoSizeColumn(i);
             }
 
-            FileOutputStream os_ED = new FileOutputStream(myFile);
-            workbook_ED.write(os_ED);
+            FileOutputStream fileOut = new FileOutputStream(myFile);
+            workbook_ED.write(fileOut);
 
-            os_ED.close();
+            fileOut.close();
             workbook_ED.close();
 
         } catch (Exception ex) {

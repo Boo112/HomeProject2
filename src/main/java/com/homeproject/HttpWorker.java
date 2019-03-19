@@ -12,13 +12,13 @@ public class HttpWorker {
 
     public StringBuffer getResponse() {
 
-        int TIMEOUT_VALUE = 10000;
+        int timeoutValue = 10000;
         try {
 
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestMethod("GET");
-            connection.setConnectTimeout(TIMEOUT_VALUE);
-            connection.setReadTimeout(TIMEOUT_VALUE);
+            connection.setConnectTimeout(timeoutValue);
+            connection.setReadTimeout(timeoutValue);
 
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
