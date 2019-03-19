@@ -140,6 +140,7 @@
       <find>GeneratData</find>
       <find>house</find>
       <find>getFormatedData</find>
+      <find>os_ED</find>
     </findStrings>
   </component>
   <component name="Git.Settings">

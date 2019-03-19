@@ -7,7 +7,7 @@ import org.apache.poi.ss.usermodel.Row;
 
 import java.io.*;
 
-public class ExcelWorking {
+public class ExcelWorker {
 
 
     public void createExcelFile(String filename) {

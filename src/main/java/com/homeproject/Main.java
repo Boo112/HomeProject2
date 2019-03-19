@@ -7,14 +7,14 @@ public class Main {
         PathToFiles fPath=new PathToFiles();
 
         Users users = new Users();
-        ExcelWorking excelWorking=new ExcelWorking();
+        ExcelWorker excelWorker =new ExcelWorker();
         users.populate();
 
-        excelWorking.createExcelFile(fPath.fileNameXls);
+        excelWorker.createExcelFile(fPath.fileNameXls);
 
         for (User user : users.get()) {
 
-            excelWorking.reWriteExcel(
+            excelWorker.reWriteExcel(
                     fPath.fileNameXls,
                     user.getFirstName(),
                     user.getLastName(),
