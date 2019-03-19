@@ -1,4 +1,4 @@
-package com.homeproject;
+package com.homeproject.helper;
 
 import com.google.gson.JsonElement;
 

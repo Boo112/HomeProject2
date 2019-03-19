@@ -1,4 +1,6 @@
-package com.homeproject;
+package com.homeproject.processing;
+
+import com.homeproject.helper.PathToFiles;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

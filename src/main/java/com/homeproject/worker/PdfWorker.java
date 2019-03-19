@@ -1,7 +1,9 @@
-package com.homeproject;
+package com.homeproject.worker;
 
 import be.quodlibet.boxable.BaseTable;
 import be.quodlibet.boxable.Row;
+import com.homeproject.helper.PathToFiles;
+import com.homeproject.User;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
@@ -12,10 +14,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-class PdfWorker {
+public class PdfWorker {
 
 
-    void writePDF(String filename, List<User> users) {
+    public void writePDF(String filename, List<User> users) {
 
         PDPage myPage = new PDPage(new PDRectangle(PDRectangle.A4.getHeight(), PDRectangle.A4.getWidth()));
         File pdf = new File(filename);

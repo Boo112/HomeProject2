@@ -1,7 +1,10 @@
-package com.homeproject;
+package com.homeproject.processing;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.homeproject.User;
+import com.homeproject.helper.ParserHelper;
+import com.homeproject.helper.PathToFiles;
 
 import java.text.DateFormat;
 import java.util.Date;
