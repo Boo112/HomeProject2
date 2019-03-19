@@ -1,5 +1,7 @@
 package com.homeproject;
 
+import com.homeproject.worker.HttpWorker;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

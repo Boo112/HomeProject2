@@ -1,4 +1,4 @@
-package com.homeproject;
+package com.homeproject.worker;
 
 import java.io.BufferedReader;
 import java.io.IOException;
