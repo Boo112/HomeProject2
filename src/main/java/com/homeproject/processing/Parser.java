@@ -23,8 +23,6 @@ public class Parser {
     // Получаем пользователей из локальной базы
     public User getUserFromLocalDatabase(int count) {
 
-        Locale local = new Locale("ru", "RU");
-        DateFormat df = DateFormat.getDateInstance(DateFormat.DEFAULT, local);
 
         String firstName = generatData.getNamesFromFile(fPath.fileNameMan, fPath.fileNameWoman)[count]; // Получаем первое имя из общего списка М+Ж
         String lastName;
@@ -59,7 +57,7 @@ public class Parser {
     }
 
     // Получение данных о пользователе из "https://randomuser.me/api/"
-    public User getUserFromJSON(StringBuffer temp) {
+    public User getUserFromJSON(StringBuffer temp,int count) {
 
 
         JsonElement jsonTree = new JsonParser().parse(temp.toString());
@@ -85,9 +83,16 @@ public class Parser {
         String inn = String.valueOf(generatData.getInn()); // ИНН формируем из локальной базы
         String street1 = street.toString().replace("\"", "");
         String country = parserHelper.getCountry(nationality.toString().replace("\"", ""));
+        String patronymic;
+
+        if(parserHelper.getFormatedData(gender)=="male") {
+            patronymic = generatData.getNameFromFile(fPath.filePatronymicMan)[count];
+        }else{
+            patronymic = generatData.getNameFromFile(fPath.filePatronymicWoman)[count];
+        }
 
         return new User(
-                parserHelper.getFormatedData(firstName), parserHelper.getFormatedData(lastName), "no patronymic",
+                parserHelper.getFormatedData(firstName), parserHelper.getFormatedData(lastName), patronymic,
                 parserHelper.getFormatedData(age), parserHelper.getFormatedData(gender),
                 parserHelper.getFormatedDate(parserHelper.getFormatedData(dateOfBirth)),
                 parserHelper.getFormatedData(city), street1.replaceAll(house, ""),

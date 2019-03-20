@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Users.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Users.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeproject/processing/GeneratData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeproject/processing/GeneratData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeproject/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeproject/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/homeproject/processing/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeproject/processing/Parser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="41" />
+            <state relative-caret-position="-28">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,14 +44,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/processing/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="46" column="74" lean-forward="true" selection-start-line="46" selection-start-column="74" selection-end-line="46" selection-end-column="74" />
+            <state relative-caret-position="178">
+              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#getUserFromJSON#0;class#Parser#0" />
                 <element signature="method#getArrayObject#0;class#Parser#0" />
                 <element signature="method#getValue#0;class#Parser#0" />
               </folding>
@@ -59,19 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/processing/GeneratData.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/Users.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
-              <folding>
-                <element signature="method#getNamesFromFile#0;class#GeneratData#0" />
-                <element signature="method#getIndex#0;class#GeneratData#0" />
-                <element signature="method#getInn#0;class#GeneratData#0" />
-                <element signature="method#getAge#0;class#GeneratData#0" />
-                <element signature="method#getNameFromFile#0;class#GeneratData#0" />
-                <element signature="method#getGender#0;class#GeneratData#0" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -114,8 +105,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/homeproject/helper/GeneratData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/homeproject/GeneratData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/homeproject/worker/HttpWorker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/homeproject/processing/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/homeproject/processing/GeneratData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/homeproject/helper/ParserHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/homeproject/worker/ExcelWorker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/homeproject/Users.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/homeproject/processing/Parser.java" />
       </list>
     </option>
   </component>
@@ -153,6 +147,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -193,22 +189,38 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="homeproject" type="462c0819:PsiDirectoryNode" />
+              <item name="helper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomeProgect3-API--master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomeProgect3-API--master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="homeproject" type="462c0819:PsiDirectoryNode" />
               <item name="processing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomeProgect3-API--master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomeProgect3-API--master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="homeproject" type="462c0819:PsiDirectoryNode" />
+              <item name="worker" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553030224154" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553030322531" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -261,18 +273,20 @@
       <workItem from="1552910575294" duration="2955000" />
       <workItem from="1552919739724" duration="3373000" />
       <workItem from="1552923741097" duration="680000" />
-      <workItem from="1553017900967" duration="6142000" />
+      <workItem from="1553017900967" duration="6402000" />
+      <workItem from="1553065605279" duration="25000" />
+      <workItem from="1553065812509" duration="1499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26688000" />
+    <option name="totallyTimeSpent" value="28472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1788269" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18383405" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -298,7 +312,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" weight="0.101573676" />
+      <window_info anchor="right" id="Maven" order="6" visible="true" weight="0.101573676" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
@@ -366,25 +380,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/worker/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/helper/ParserHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="method#getHouseFromStreet#0;class#ParserHelper#0" />
-            <element signature="method#getCountry#0;class#ParserHelper#0" />
-            <element signature="method#getFormatedData#0;class#ParserHelper#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/worker/test.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/worker/PdfWorker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-762">
@@ -395,23 +391,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/worker/ExcelWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="834">
-          <caret line="81" column="23" lean-forward="true" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/processing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/processing.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/helper/PathToFiles.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -426,10 +406,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/helper/ParserHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="method#getHouseFromStreet#0;class#ParserHelper#0" />
+            <element signature="method#getCountry#0;class#ParserHelper#0" />
+            <element signature="method#getFormatedData#0;class#ParserHelper#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/processing/GeneratData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="177" column="48" lean-forward="true" selection-start-line="177" selection-start-column="48" selection-end-line="177" selection-end-column="48" />
+          <folding>
+            <element signature="method#getNamesFromFile#0;class#GeneratData#0" />
+            <element signature="method#getIndex#0;class#GeneratData#0" />
+            <element signature="method#getDataBirth#0;class#GeneratData#0" />
+            <element signature="method#getInn#0;class#GeneratData#0" />
+            <element signature="method#getAge#0;class#GeneratData#0" />
+            <element signature="method#getGender#0;class#GeneratData#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="41" />
+        <state relative-caret-position="-28">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/worker/ExcelWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="32" column="57" lean-forward="true" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -438,42 +462,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/Users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="195">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/processing/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="46" column="74" lean-forward="true" selection-start-line="46" selection-start-column="74" selection-end-line="46" selection-end-column="74" />
+        <state relative-caret-position="178">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getUserFromJSON#0;class#Parser#0" />
             <element signature="method#getArrayObject#0;class#Parser#0" />
             <element signature="method#getValue#0;class#Parser#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/processing/GeneratData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <element signature="method#getNamesFromFile#0;class#GeneratData#0" />
-            <element signature="method#getIndex#0;class#GeneratData#0" />
-            <element signature="method#getInn#0;class#GeneratData#0" />
-            <element signature="method#getAge#0;class#GeneratData#0" />
-            <element signature="method#getNameFromFile#0;class#GeneratData#0" />
-            <element signature="method#getGender#0;class#GeneratData#0" />
           </folding>
         </state>
       </provider>
@@ -535,6 +536,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

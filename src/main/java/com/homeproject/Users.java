@@ -11,6 +11,7 @@ public class Users {
 
     private Random r=new Random();
     private List<User> users = new ArrayList<User>();
+    Parser parser=new Parser();
 
     int count= 1+r.nextInt(30);
 
@@ -21,9 +22,9 @@ public class Users {
             StringBuffer httpResponse = new HttpWorker().getResponse();
 
             if (httpResponse != null) {
-                 users.add(new Parser().getUserFromJSON(httpResponse));// добавляем из randomuser/api
+                 users.add(parser.getUserFromJSON(httpResponse,i));// добавляем из randomuser/api
             } else {
-                 users.add(new Parser().getUserFromLocalDatabase(i)); // добавляем из локальной базы пользователя
+                 users.add(parser.getUserFromLocalDatabase(i)); // добавляем из локальной базы пользователя
             }
         }
     }
