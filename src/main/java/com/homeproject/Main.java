@@ -20,21 +20,7 @@ public class Main {
         for (User user : users.get()) {
 
             excelWorker.reWriteExcel(
-                    fPath.fileNameXls,
-                    user.getFirstName(),
-                    user.getLastName(),
-                    user.getPatronymic(),
-                    user.getAge(),
-                    user.getGender(),
-                    user.getDateOfBorn(),
-                    user.getInn(),
-                    user.getIndex(),
-                    user.getCountry(),
-                    user.getState(),
-                    user.getCity(),
-                    user.getStreet(),
-                    user.getHouse(),
-                    user.getFlat());
+                    fPath.fileNameXls,user);
 
         }
 

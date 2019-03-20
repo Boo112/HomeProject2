@@ -1,5 +1,7 @@
 package com.homeproject.worker;
 
+import com.homeproject.User;
+import com.homeproject.Users;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -46,10 +48,7 @@ public class ExcelWorker {
         }
     }
 
-    public void reWriteExcel(String fileName, String firstName, String lastName, String patronymic,
-                             String age, String gender, String dateOfBorn, String inn, String index,
-                             String country, String state, String city, String street, String house,
-                             String flat) {
+    public void reWriteExcel(String fileName, User user) {
 
         File myFile = new File(fileName);
         try (FileInputStream inputStream = new FileInputStream(myFile)){
@@ -59,27 +58,24 @@ public class ExcelWorker {
 
             Row row = sheet.createRow(sheet.getLastRowNum() + 1);
             //Дописываем данные
-            row.createCell(0).setCellValue(firstName);
-            row.createCell(1).setCellValue(lastName);
-            row.createCell(2).setCellValue(patronymic);
-            row.createCell(4).setCellValue(gender);
-            row.createCell(3).setCellValue(age);
-            row.createCell(5).setCellValue(dateOfBorn);
-            row.createCell(6).setCellValue(inn);
-            row.createCell(7).setCellValue(index);
-            row.createCell(8).setCellValue(country);
-            row.createCell(9).setCellValue(state);
-            row.createCell(10).setCellValue(city);
-            row.createCell(11).setCellValue(street);
-            row.createCell(12).setCellValue(house);
-            row.createCell(13).setCellValue(flat);
+            row.createCell(0).setCellValue(user.getFirstName());
+            row.createCell(1).setCellValue(user.getLastName());
+            row.createCell(2).setCellValue(user.getPatronymic());
+            row.createCell(4).setCellValue(user.getGender());
+            row.createCell(3).setCellValue(user.getAge());
+            row.createCell(5).setCellValue(user.getDateOfBorn());
+            row.createCell(6).setCellValue(user.getInn());
+            row.createCell(7).setCellValue(user.getIndex());
+            row.createCell(8).setCellValue(user.getCountry());
+            row.createCell(9).setCellValue(user.getState());
+            row.createCell(10).setCellValue(user.getCity());
+            row.createCell(11).setCellValue(user.getStreet());
+            row.createCell(12).setCellValue(user.getHouse());
+            row.createCell(13).setCellValue(user.getFlat());
 
             for (int i = 0; i < row.getLastCellNum() - 1; i++) {
                 sheet.autoSizeColumn(i);
             }
-
-
-
 
             FileOutputStream fileOut = new FileOutputStream(myFile);
             workbook_ED.write(fileOut);

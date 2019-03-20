@@ -26,9 +26,7 @@ public class ParserHelper {
 
     //Получаем номер дома из названия улицы
     public String getHouseFromStreet(String street) {
-
         return street.replaceAll("\\D+", "");
-
     }
 
     // Получаем страну из национальности
@@ -98,7 +96,6 @@ public class ParserHelper {
 
     // Преобразование в нормальную отформатированную строку данных из Json
     public String getFormatedData(JsonElement data) {
-
         return data.toString().replace("\"", "");
     }
 
