@@ -1,6 +1,7 @@
 package com.homeproject.helper;
 
 import com.google.gson.JsonElement;
+import com.homeproject.processing.GeneratData;
 
 public class ParserHelper {
 
@@ -101,5 +102,28 @@ public class ParserHelper {
         return data.toString().replace("\"", "");
     }
 
+    // Проеобазуем male в "М"
+    public String genderToRus(JsonElement gender){
+        String gend;
+
+        if(getFormatedData(gender).equals("male")) {
+            gend="M";
+        }else {
+            gend="Ж";
+        }
+        return gend;
+    }
+
+    // получаем отчество
+    public String getPatronymic(JsonElement gender, GeneratData generatData,PathToFiles fPath,int count){
+        String patronymic;
+
+        if(getFormatedData(gender).equals("male")) {
+            patronymic = generatData.getNameFromFile(fPath.filePatronymicMan)[count];
+        }else{
+            patronymic = generatData.getNameFromFile(fPath.filePatronymicWoman)[count];
+        }
+        return patronymic;
+    }
 
 }

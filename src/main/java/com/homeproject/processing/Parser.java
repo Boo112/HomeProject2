@@ -6,10 +6,8 @@ import com.homeproject.User;
 import com.homeproject.helper.ParserHelper;
 import com.homeproject.helper.PathToFiles;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 import java.util.Random;
 
 public class Parser {
@@ -83,17 +81,20 @@ public class Parser {
         String inn = String.valueOf(generatData.getInn()); // ИНН формируем из локальной базы
         String street1 = street.toString().replace("\"", "");
         String country = parserHelper.getCountry(nationality.toString().replace("\"", ""));
-        String patronymic;
 
-        if(parserHelper.getFormatedData(gender)=="male") {
-            patronymic = generatData.getNameFromFile(fPath.filePatronymicMan)[count];
-        }else{
-            patronymic = generatData.getNameFromFile(fPath.filePatronymicWoman)[count];
-        }
+
+        String patronymic=parserHelper.getPatronymic(gender,generatData,fPath,count);
+
+        String genderR=parserHelper.genderToRus(gender);
+
+
+
+
+
 
         return new User(
                 parserHelper.getFormatedData(firstName), parserHelper.getFormatedData(lastName), patronymic,
-                parserHelper.getFormatedData(age), parserHelper.getFormatedData(gender),
+                parserHelper.getFormatedData(age), genderR,
                 parserHelper.getFormatedDate(parserHelper.getFormatedData(dateOfBirth)),
                 parserHelper.getFormatedData(city), street1.replaceAll(house, ""),
                 country, flat, inn, parserHelper.getFormatedData(index), house, parserHelper.getFormatedData(state)
