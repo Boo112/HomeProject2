@@ -16,7 +16,6 @@ public class Parser {
     PathToFiles fPath=new PathToFiles();
     ParserHelper parserHelper=new ParserHelper();
 
-
     Random r = new Random();
 
     // Получаем пользователей из локальной базы
@@ -32,7 +31,6 @@ public class Parser {
 
         // Тут получаем данные в зависимости от пола юзера
         if (generatData.getGender(firstName) == true) {
-
             lastName = generatData.getNameFromFile(fPath.fileSecondNameMan)[count];
             patronic = generatData.getNameFromFile(fPath.filePatronymicMan)[count];
             gender = "М";
@@ -57,7 +55,6 @@ public class Parser {
         user.setCity(generatData.getNameFromFile(fPath.fileCity)[count]);
         user.setState(generatData.getNameFromFile(fPath.fileOblast)[count]);
 
-
         return user;
     }
 
@@ -68,7 +65,6 @@ public class Parser {
         JsonElement jsonTree = new JsonParser().parse(temp.toString());
 
         JsonElement results = jsonTree.getAsJsonObject().get("results");
-
         JsonElement name = getArrayObject(results, "name");
         JsonElement firstName = getValue(name, "first");
         JsonElement lastName = getValue(name, "last");
