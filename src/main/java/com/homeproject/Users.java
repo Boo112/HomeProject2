@@ -17,7 +17,6 @@ public class Users {
     public void populate() {
 
         for(int i=0;i<count;i++) {
-
                  users.add(parser.getUserFromLocalDatabase(i)); // добавляем из локальной базы пользователя
         }
     }

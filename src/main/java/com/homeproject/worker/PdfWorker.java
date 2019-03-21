@@ -16,7 +16,6 @@ import java.util.List;
 
 public class PdfWorker {
 
-
     public void writePDF(String filename, List<User> users) {
 
         PDPage myPage = new PDPage(new PDRectangle(PDRectangle.A4.getHeight(), PDRectangle.A4.getWidth()));
