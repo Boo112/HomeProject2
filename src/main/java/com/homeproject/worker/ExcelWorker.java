@@ -11,13 +11,12 @@ import java.io.*;
 public class ExcelWorker {
 
     public void createExcelFile(String filename) {
-        try {
-            File file = new File(filename);
-            FileOutputStream fileOut = new FileOutputStream(file);
 
-            HSSFWorkbook workbook = new HSSFWorkbook();
+        File file = new File(filename);
+        try(FileOutputStream fileOut = new FileOutputStream(file);
+            HSSFWorkbook workbook = new HSSFWorkbook()) {
+
             HSSFSheet sheet = workbook.createSheet("Данные пользователей");
-
             // Создаем шапку документа эксель
             HSSFRow rowhead = sheet.createRow((short) 0);
             rowhead.createCell(0).setCellValue("Имя");
@@ -36,8 +35,6 @@ public class ExcelWorker {
             rowhead.createCell(13).setCellValue("Квартира");
 
             workbook.write(fileOut);
-            fileOut.close();
-            workbook.close();
 
             System.out.println("\n" + "Файл создан. " + "Путь: " + file.getAbsolutePath());
 
@@ -49,10 +46,11 @@ public class ExcelWorker {
     public void reWriteExcel(String fileName, User user) {
 
         File myFile = new File(fileName);
-        try (FileInputStream inputStream = new FileInputStream(myFile)){
+        try (FileInputStream inputStream = new FileInputStream(myFile);
+             HSSFWorkbook workbook = new HSSFWorkbook(inputStream);
+             FileOutputStream fileOut = new FileOutputStream(myFile)){
 
-            HSSFWorkbook workbook_ED = new HSSFWorkbook(inputStream);
-            HSSFSheet sheet = workbook_ED.getSheetAt(0);
+            HSSFSheet sheet = workbook.getSheetAt(0);
 
             Row row = sheet.createRow(sheet.getLastRowNum() + 1);
             //Дописываем данные
@@ -75,11 +73,7 @@ public class ExcelWorker {
                 sheet.autoSizeColumn(i);
             }
 
-            FileOutputStream fileOut = new FileOutputStream(myFile);
-            workbook_ED.write(fileOut);
-
-            fileOut.close();
-            workbook_ED.close();
+            workbook.write(fileOut);
 
         } catch (IOException e) {
             System.out.println(e);
