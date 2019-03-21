@@ -21,7 +21,7 @@ public class PdfWorker {
         PDPage myPage = new PDPage(new PDRectangle(PDRectangle.A4.getHeight(), PDRectangle.A4.getWidth()));
         File pdf = new File(filename);
 
-        try(  PDDocument mainDocument = new PDDocument()) {
+        try(PDDocument mainDocument = new PDDocument()) {
 
         float margin = 10;
         float yStartNewPage = myPage.getMediaBox().getHeight() - (2 * margin);
@@ -76,10 +76,10 @@ public class PdfWorker {
         }
         table.draw();
 
-            mainDocument.addPage(myPage);
-            mainDocument.save(pdf);
+        mainDocument.addPage(myPage);
+        mainDocument.save(pdf);
 
-            System.out.println("\n" + "Файл создан. " + "Путь: " + pdf.getAbsolutePath());
+        System.out.println("\n" + "Файл создан. " + "Путь: " + pdf.getAbsolutePath());
 
         } catch (IOException e) {
 

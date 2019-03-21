@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Parser {
 
-    GeneratData generatData=new GeneratData();
+    GenerateData generateData =new GenerateData();
     PathToFiles fPath=new PathToFiles();
 
     Random r = new Random();
@@ -17,21 +17,21 @@ public class Parser {
     public User getUserFromLocalDatabase(int count) {
         User user = new User();
 
-        String firstName = generatData.getNamesFromFile(fPath.fileNameMan, fPath.fileNameWoman)[count]; // Получаем первое имя из общего списка М+Ж
+        String firstName = generateData.getNamesFromFile(fPath.fileNameMan, fPath.fileNameWoman)[count]; // Получаем первое имя из общего списка М+Ж
 
         String lastName;
         String patronic;
         String gender;
-        Date dt = generatData.getDataBirth();
+        Date dt = generateData.getDataBirth();
 
         // Тут получаем данные в зависимости от пола юзера
-        if (generatData.getGender(firstName) == true) {
-            lastName = generatData.getNameFromFile(fPath.fileSecondNameMan)[count];
-            patronic = generatData.getNameFromFile(fPath.filePatronymicMan)[count];
+        if (generateData.getGender(firstName) == true) {
+            lastName = generateData.getNameFromFile(fPath.fileSecondNameMan)[count];
+            patronic = generateData.getNameFromFile(fPath.filePatronymicMan)[count];
             gender = "М";
         } else {
-            lastName = generatData.getNameFromFile(fPath.fileSecondNameWoman)[count];
-            patronic = generatData.getNameFromFile(fPath.filePatronymicWoman)[count];
+            lastName = generateData.getNameFromFile(fPath.fileSecondNameWoman)[count];
+            patronic = generateData.getNameFromFile(fPath.filePatronymicWoman)[count];
             gender = "Ж";
         }
 
@@ -39,16 +39,16 @@ public class Parser {
         user.setLastName(lastName);
         user.setPatronymic(patronic);
         user.setGender(gender);
-        user.setCountry(generatData.getNameFromFile(fPath.fileCountries)[count]);
-        user.setStreet(generatData.getNameFromFile(fPath.fileStreets)[count]);
-        user.setInn(String.valueOf(generatData.getInn()));
+        user.setCountry(generateData.getNameFromFile(fPath.fileCountries)[count]);
+        user.setStreet(generateData.getNameFromFile(fPath.fileStreets)[count]);
+        user.setInn(String.valueOf(generateData.getInn()));
         user.setHouse(String.valueOf(1 + r.nextInt(200)));
         user.setFlat(String.valueOf(1 + r.nextInt(500)));
         user.setDateOfBorn(new SimpleDateFormat("dd-MM-yyyy").format(dt));
-        user.setAge(String.valueOf(generatData.getAge(dt)));
-        user.setIndex(String.valueOf(generatData.getIndex()));
-        user.setCity(generatData.getNameFromFile(fPath.fileCity)[count]);
-        user.setState(generatData.getNameFromFile(fPath.fileOblast)[count]);
+        user.setAge(String.valueOf(generateData.getAge(dt)));
+        user.setIndex(String.valueOf(generateData.getIndex()));
+        user.setCity(generateData.getNameFromFile(fPath.fileCity)[count]);
+        user.setState(generateData.getNameFromFile(fPath.fileOblast)[count]);
 
         return user;
     }
