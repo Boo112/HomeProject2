@@ -13,32 +13,45 @@ public class HttpWorker {
     public StringBuffer getResponse() {
 
         int timeoutValue = 10000;
-        try {
+        BufferedReader in=null;
 
+
+        try {
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(timeoutValue);
             connection.setReadTimeout(timeoutValue);
 
-            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+
+            in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
             String inputLine;
             StringBuffer response = new StringBuffer();
 
-            try {
+
                 while ((inputLine = in.readLine()) != null) {
                     response.append(inputLine);
                 }
-            } finally {
-                in.close();
-            }
+
             return response;
 
         } catch (IOException e) {
             System.err.println("Соединение с интенетом прервано, данные формируются из локальной БД...");
+
         }
 
+        // тут может нужно переделать!!!!
+        finally {
+            try {
+                if(in==null)
+                return null;
+                in.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         return null;
+
     }
 }
