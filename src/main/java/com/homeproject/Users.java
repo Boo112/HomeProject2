@@ -1,7 +1,6 @@
 package com.homeproject;
 
 import com.homeproject.processing.Parser;
-import com.homeproject.worker.HttpWorker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,13 +18,7 @@ public class Users {
 
         for(int i=0;i<count;i++) {
 
-            StringBuffer httpResponse = new HttpWorker().getResponse();
-
-            if (httpResponse != null) {
-                 users.add(parser.getUserFromJSON(httpResponse,i));// добавляем из randomuser/api
-            } else {
                  users.add(parser.getUserFromLocalDatabase(i)); // добавляем из локальной базы пользователя
-            }
         }
     }
 
