@@ -19,9 +19,7 @@ public class Main {
 
         for (User user : users.get()) {
 
-            excelWorker.reWriteExcel(
-                    fPath.fileNameXls,user);
-
+            excelWorker.reWriteExcel(fPath.fileNameXls,user);
         }
 
         new PdfWorker().writePDF(fPath.filenamePdf, users.get()); // создаем pdf

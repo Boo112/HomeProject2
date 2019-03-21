@@ -72,34 +72,61 @@ public class User {
         return country;
     }
 
-    public User (String firstName,
-                 String lastName,
-                 String patronymic,
-                 String age,
-                 String gender,
-                 String dateOfBorn,
-                 String city,
-                 String street,
-                 String country,
-                 String flat,
-                 String inn,
-                 String index,
-                 String house,
-                 String state
-                 ){
+
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
-        this.lastName = lastName;
-        this.state = state;
-        this.city = city;
-        this.street = street;
-        this.age=age;
-        this.patronymic=patronymic;
-        this.gender=gender;
-        this.dateOfBorn=dateOfBorn;
-        this.house=house;
-        this.flat=flat;
-        this.index=index;
-        this.inn=inn;
-        this.country=country;
     }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setDateOfBorn(String dateOfBorn) {
+        this.dateOfBorn = dateOfBorn;
+    }
+
+    public void setInn(String inn) {
+        this.inn = inn;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public void setHouse(String house) {
+        this.house = house;
+    }
+
+    public void setFlat(String flat) {
+        this.flat = flat;
+    }
+
 }

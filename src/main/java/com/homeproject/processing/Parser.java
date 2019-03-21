@@ -16,13 +16,15 @@ public class Parser {
     PathToFiles fPath=new PathToFiles();
     ParserHelper parserHelper=new ParserHelper();
 
+
     Random r = new Random();
 
     // Получаем пользователей из локальной базы
     public User getUserFromLocalDatabase(int count) {
-
+        User user = new User();
 
         String firstName = generatData.getNamesFromFile(fPath.fileNameMan, fPath.fileNameWoman)[count]; // Получаем первое имя из общего списка М+Ж
+
         String lastName;
         String patronic;
         String gender;
@@ -40,23 +42,28 @@ public class Parser {
             gender = "Ж";
         }
 
-        String dateOfBorn = new SimpleDateFormat("dd-MM-yyyy").format(dt);
-        String index = String.valueOf(generatData.getIndex());
-        String inn = String.valueOf(generatData.getInn());
-        String age = String.valueOf(generatData.getAge(dt));
-        String country = generatData.getNameFromFile(fPath.fileCountries)[count];
-        String state = generatData.getNameFromFile(fPath.fileOblast)[count];
-        String city = generatData.getNameFromFile(fPath.fileCity)[count];
-        String street = generatData.getNameFromFile(fPath.fileStreets)[count];
-        String flat = String.valueOf(1 + r.nextInt(500));
-        String house = String.valueOf(1 + r.nextInt(200));
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setPatronymic(patronic);
+        user.setGender(gender);
+        user.setCountry(generatData.getNameFromFile(fPath.fileCountries)[count]);
+        user.setStreet(generatData.getNameFromFile(fPath.fileStreets)[count]);
+        user.setInn(String.valueOf(generatData.getInn()));
+        user.setHouse(String.valueOf(1 + r.nextInt(200)));
+        user.setFlat(String.valueOf(1 + r.nextInt(500)));
+        user.setDateOfBorn(new SimpleDateFormat("dd-MM-yyyy").format(dt));
+        user.setAge(String.valueOf(generatData.getAge(dt)));
+        user.setIndex(String.valueOf(generatData.getIndex()));
+        user.setCity(generatData.getNameFromFile(fPath.fileCity)[count]);
+        user.setState(generatData.getNameFromFile(fPath.fileOblast)[count]);
 
-        return new User(firstName, lastName, patronic, age, gender, dateOfBorn, city, street, country, flat, inn, index, house, state);
+
+        return user;
     }
 
     // Получение данных о пользователе из "https://randomuser.me/api/"
     public User getUserFromJSON(StringBuffer temp,int count) {
-
+        User user = new User();
 
         JsonElement jsonTree = new JsonParser().parse(temp.toString());
 
@@ -76,29 +83,23 @@ public class Parser {
         JsonElement age = getValue(dob, "age");
         JsonElement dateOfBirth = getValue(dob, "date");
 
-        String flat = String.valueOf(1 + r.nextInt(500));
-        String house = parserHelper.getHouseFromStreet(street.toString().replace("\"", ""));
-        String inn = String.valueOf(generatData.getInn()); // ИНН формируем из локальной базы
-        String street1 = street.toString().replace("\"", "");
-        String country = parserHelper.getCountry(nationality.toString().replace("\"", ""));
+        user.setFirstName(parserHelper.getFormatedData(firstName));
+        user.setLastName(parserHelper.getFormatedData(lastName));
+        user.setPatronymic(parserHelper.getPatronymic(gender,generatData,fPath,count));
+        user.setGender(parserHelper.genderToRus(gender));
+        user.setCountry(parserHelper.getCountry(nationality.toString().replace("\"", "")));
+        user.setStreet(parserHelper.getStreetWithoutHouse (street.toString().replace("\"", ""),
+                parserHelper.getHouseFromStreet(street.toString().replace("\"", ""))));
+        user.setInn(String.valueOf(generatData.getInn()));
+        user.setHouse(parserHelper.getHouseFromStreet(street.toString().replace("\"", "")));
+        user.setFlat(String.valueOf(1 + r.nextInt(500)));
+        user.setDateOfBorn(parserHelper.getFormatedDate(parserHelper.getFormatedData(dateOfBirth)));
+        user.setAge(parserHelper.getFormatedData(age));
+        user.setIndex(parserHelper.getFormatedData(index));
+        user.setCity(parserHelper.getFormatedData(city));
+        user.setState(parserHelper.getFormatedData(state));
 
-
-        String patronymic=parserHelper.getPatronymic(gender,generatData,fPath,count);
-
-        String genderR=parserHelper.genderToRus(gender);
-
-
-
-
-
-
-        return new User(
-                parserHelper.getFormatedData(firstName), parserHelper.getFormatedData(lastName), patronymic,
-                parserHelper.getFormatedData(age), genderR,
-                parserHelper.getFormatedDate(parserHelper.getFormatedData(dateOfBirth)),
-                parserHelper.getFormatedData(city), street1.replaceAll(house, ""),
-                country, flat, inn, parserHelper.getFormatedData(index), house, parserHelper.getFormatedData(state)
-        );
+        return user;
     }
 
     private JsonElement getArrayObject(JsonElement array, String objectName) {

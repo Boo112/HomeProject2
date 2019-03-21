@@ -123,4 +123,10 @@ public class ParserHelper {
         return patronymic;
     }
 
+    public String getStreetWithoutHouse (String street,String house){
+
+        return street.replaceAll(house,"");
+
+    }
+
 }
