@@ -13,38 +13,6 @@ public class GenerateData {
 
     Random r = new Random();
 
-    // метод для получения имен из файла(с учетом случаной выборки из мужских и женских имен)
-    public String[] getNamesFromFile(String filename1, String filename2) {
-
-        String[] shuffledArray = new String[60];
-
-        try {
-            //Для чтения мужского имени
-            BufferedReader reader = new BufferedReader(new FileReader(filename1));
-            //Для чтения Ж имени
-            BufferedReader reader1 = new BufferedReader(new FileReader(filename2));
-            //Для чтения М фамилий
-            String line1, line2;
-
-            List<String> lines = new ArrayList<String>();
-
-            while ((line1 = reader.readLine()) != null) {
-                lines.add(line1);
-            }
-            while ((line2 = reader1.readLine()) != null) {
-                lines.add(line2);
-            }
-            //Смешиваем женские имена и мужские в один массив
-            Collections.shuffle(lines);
-            shuffledArray = lines.toArray(new String[0]); // Формируем массив Имен в произвольном порядке
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return shuffledArray;
-    }
-
     // Генерация индекса случайным образом от 100000 до 2000000
     public int getIndex() {
         return 100000 + r.nextInt(100000);

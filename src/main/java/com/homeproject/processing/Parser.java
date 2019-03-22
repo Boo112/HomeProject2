@@ -17,13 +17,22 @@ public class Parser {
     // Получаем пользователей из локальной базы
     public User getUserFromLocalDatabase(int count) {
         User user = new User();
-
-        String firstName = generateData.getNamesFromFile(fPath.fileNameMan, fPath.fileNameWoman)[count]; // Получаем первое имя из общего списка М+Ж
-
+        String firstName;
         String lastName;
         String patronic;
         String gender;
         Date dt = generateData.getDataBirth();
+
+        if(count % 2 == 0){
+            firstName=generateData.getNameFromFile(fPath.fileNameMan)[count];
+
+        }else {
+            firstName=generateData.getNameFromFile(fPath.fileNameWoman)[count];
+        }
+
+        //String firstName = generateData.getNamesFromFile(fPath.fileNameMan, fPath.fileNameWoman)[count]; // Получаем первое имя из общего списка М+Ж
+
+
 
         // Тут получаем данные в зависимости от пола юзера
         if (generateData.getGender(firstName) == true) {

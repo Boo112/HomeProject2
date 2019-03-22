@@ -48,10 +48,10 @@ public class ExcelWorker {
 
     public void reWriteExcel(String fileName, User user) {
 
-        File myFile = new File(fileName);
-        try (FileInputStream inputStream = new FileInputStream(myFile);
+        File excelFile = new File(fileName);
+        try (FileInputStream inputStream = new FileInputStream(excelFile);
              HSSFWorkbook workbook = new HSSFWorkbook(inputStream);
-             FileOutputStream fileOut = new FileOutputStream(myFile)){
+             FileOutputStream fileOut = new FileOutputStream(excelFile)){
 
             HSSFSheet sheet = workbook.getSheetAt(0);
 
