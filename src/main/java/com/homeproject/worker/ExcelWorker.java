@@ -72,7 +72,8 @@ public class ExcelWorker {
             row.createCell(12).setCellValue(user.getHouse());
             row.createCell(13).setCellValue(user.getFlat());
 
-            for (int i = 0; i < row.getLastCellNum() - 1; i++) {
+            int LastCellNum=row.getLastCellNum()-1;
+            for (int i = 0; i < LastCellNum; i++) {
                 sheet.autoSizeColumn(i);
             }
 
