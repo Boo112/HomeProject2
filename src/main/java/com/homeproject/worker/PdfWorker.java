@@ -26,11 +26,11 @@ public class PdfWorker {
         float margin = 10;
         float yStartNewPage = myPage.getMediaBox().getHeight() - (2 * margin);
         float tableWidth = myPage.getMediaBox().getWidth() - (2 * margin);
-        boolean drawContent = true;
         float bottomMargin = 70;
         float yPosition = 10;
 
-        BaseTable table = new BaseTable(yPosition, yStartNewPage, bottomMargin, tableWidth, margin, mainDocument, myPage, true, drawContent);
+        BaseTable table = new BaseTable(yPosition, yStartNewPage, bottomMargin, tableWidth, margin,
+                mainDocument, myPage, true, true);
 
         PDFont font3 = PDType0Font.load(mainDocument, new File(new PathToFiles().fileFont));
 

@@ -39,7 +39,7 @@ public class GenerateData {
 
         try(BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
-            List<String> lines = new ArrayList<String>();
+            List<String> lines = new ArrayList();
 
             while ((line = reader.readLine()) != null) {
                 lines.add(line);
@@ -63,7 +63,7 @@ public class GenerateData {
         try(BufferedReader reader = new BufferedReader(new FileReader(new PathToFiles().fileNameMan))) {
             String line;
             String[] array;
-            List<String> lines = new ArrayList<String>();
+            List<String> lines = new ArrayList();
 
             // получаем мужские имена из файла
             while ((line = reader.readLine()) != null) {
