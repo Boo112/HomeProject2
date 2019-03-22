@@ -26,14 +26,10 @@ public class GenerateData {
 
     // Считаем возраст
     public int getAge(Date dt) {
-        Date dnow = new Date();
-
         String pattern = "yyyy";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        String l = simpleDateFormat.format(dt);
-        String lnow = simpleDateFormat.format(dnow);
-
-        int age = Integer.parseInt(lnow) - Integer.parseInt(l);
+        int age = Integer.parseInt(simpleDateFormat.format(new Date()))
+                - Integer.parseInt(simpleDateFormat.format(dt));
 
         return age;
     }
@@ -41,8 +37,7 @@ public class GenerateData {
     public String[] getNameFromFile(String fileName) {
         String name[] = new String[30];
 
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        try(BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
             List<String> lines = new ArrayList<String>();
 
@@ -64,25 +59,22 @@ public class GenerateData {
     // Получаем пол юзера
     public boolean getGender(String name) {
 
-        boolean a = false;
-        BufferedReader reader;
-        try {
-            reader = new BufferedReader(new FileReader(new PathToFiles().fileNameMan));
-
-            String line1;
+        boolean itsMan = false;
+        try(BufferedReader reader = new BufferedReader(new FileReader(new PathToFiles().fileNameMan))) {
+            String line;
             String[] array;
             List<String> lines = new ArrayList<String>();
 
             // получаем мужские имена из файла
-            while ((line1 = reader.readLine()) != null) {
-                lines.add(line1);
+            while ((line = reader.readLine()) != null) {
+                lines.add(line);
             }
             array = lines.toArray(new String[0]);
 
             // Проверяем содержится ли имя в файле с мужскими именами , если да то считаем что это М
             for (int i = 0; i < array.length; i++) {
                 if (array[i].equals(name)) {
-                    a = true;
+                    itsMan = true;
                 }
             }
         } catch (FileNotFoundException e) {
@@ -90,7 +82,7 @@ public class GenerateData {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return a;
+        return itsMan;
     }
 
 }

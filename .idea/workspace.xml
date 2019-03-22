@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41c00680-946f-425e-a995-64a6e2e5f733" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Users.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Users.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Users.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeproject/processing/GenerateData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeproject/processing/GenerateData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/homeproject/processing/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeproject/processing/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeproject/worker/ExcelWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeproject/worker/ExcelWorker.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,27 +43,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/processing/GenerateData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="96" column="42" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
+            <state relative-caret-position="434">
+              <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getDataBirth#0;class#GenerateData#0" />
                 <element signature="method#getAge#0;class#GenerateData#0" />
-                <element signature="method#getNameFromFile#0;class#GenerateData#0" />
-                <element signature="method#getGender#0;class#GenerateData#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/processing/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+            <state relative-caret-position="264">
+              <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,9 +116,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/homeproject/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/homeproject/GenerateInn.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/homeproject/processing/GenerateInn.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/homeproject/processing/GenerateData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/homeproject/worker/ExcelWorker.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/homeproject/processing/Parser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/homeproject/processing/GenerateData.java" />
       </list>
     </option>
   </component>
@@ -227,7 +227,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553286913182" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553287959382" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -294,12 +294,12 @@
       <workItem from="1553191575112" duration="2000" />
       <workItem from="1553191596984" duration="2260000" />
       <workItem from="1553202067506" duration="1856000" />
-      <workItem from="1553271988618" duration="8471000" />
+      <workItem from="1553271988618" duration="9648000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55164000" />
+    <option name="totallyTimeSpent" value="56341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -422,16 +422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/worker/PdfWorker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-515">
@@ -452,26 +442,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/processing/GenerateData.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/nameMan.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="96" column="42" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
+        <state relative-caret-position="270">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getDataBirth#0;class#GenerateData#0" />
-            <element signature="method#getAge#0;class#GenerateData#0" />
-            <element signature="method#getNameFromFile#0;class#GenerateData#0" />
-            <element signature="method#getGender#0;class#GenerateData#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/processing/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        <state relative-caret-position="264">
+          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/homeproject/processing/GenerateData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getDataBirth#0;class#GenerateData#0" />
+            <element signature="method#getAge#0;class#GenerateData#0" />
           </folding>
         </state>
       </provider>

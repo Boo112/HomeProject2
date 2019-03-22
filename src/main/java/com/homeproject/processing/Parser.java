@@ -19,7 +19,7 @@ public class Parser {
         User user = new User();
         String firstName;
         String lastName;
-        String patronic;
+        String patronomic;
         String gender;
         Date dt = generateData.getDataBirth();
 
@@ -37,17 +37,17 @@ public class Parser {
         // Тут получаем данные в зависимости от пола юзера
         if (generateData.getGender(firstName) == true) {
             lastName = generateData.getNameFromFile(fPath.fileSecondNameMan)[count];
-            patronic = generateData.getNameFromFile(fPath.filePatronymicMan)[count];
+            patronomic = generateData.getNameFromFile(fPath.filePatronymicMan)[count];
             gender = "М";
         } else {
             lastName = generateData.getNameFromFile(fPath.fileSecondNameWoman)[count];
-            patronic = generateData.getNameFromFile(fPath.filePatronymicWoman)[count];
+            patronomic = generateData.getNameFromFile(fPath.filePatronymicWoman)[count];
             gender = "Ж";
         }
 
         user.setFirstName(firstName);
         user.setLastName(lastName);
-        user.setPatronymic(patronic);
+        user.setPatronymic(patronomic);
         user.setGender(gender);
         user.setCountry(generateData.getNameFromFile(fPath.fileCountries)[count]);
         user.setStreet(generateData.getNameFromFile(fPath.fileStreets)[count]);
