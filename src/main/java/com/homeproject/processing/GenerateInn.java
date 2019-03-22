@@ -1,4 +1,4 @@
-package com.homeproject;
+package com.homeproject.processing;
 
 import java.util.Random;
 

@@ -1,6 +1,5 @@
 package com.homeproject.processing;
 
-import com.homeproject.GenerateInn;
 import com.homeproject.User;
 import com.homeproject.helper.PathToFiles;
 import java.text.SimpleDateFormat;
