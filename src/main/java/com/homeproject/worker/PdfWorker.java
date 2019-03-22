@@ -16,10 +16,10 @@ import java.util.List;
 
 public class PdfWorker {
 
-    public void writePDF(String filename, List<User> users) {
+    public void writePDF(String pdfFileName, List<User> users) {
 
         PDPage myPage = new PDPage(new PDRectangle(PDRectangle.A4.getHeight(), PDRectangle.A4.getWidth()));
-        File pdf = new File(filename);
+        File pdf = new File(pdfFileName);
 
         try(PDDocument mainDocument = new PDDocument()) {
 

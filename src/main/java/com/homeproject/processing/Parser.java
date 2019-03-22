@@ -19,35 +19,30 @@ public class Parser {
         User user = new User();
         String firstName;
         String lastName;
-        String patronomic;
+        String patronymic;
         String gender;
         Date dt = generateData.getDataBirth();
 
         if(count % 2 == 0){
             firstName=generateData.getNameFromFile(fPath.fileNameMan)[count];
-
         }else {
             firstName=generateData.getNameFromFile(fPath.fileNameWoman)[count];
         }
 
-        //String firstName = generateData.getNamesFromFile(fPath.fileNameMan, fPath.fileNameWoman)[count]; // Получаем первое имя из общего списка М+Ж
-
-
-
-        // Тут получаем данные в зависимости от пола юзера
+        // Тут получаем остальные данные в зависимости от пола юзера
         if (generateData.getGender(firstName) == true) {
             lastName = generateData.getNameFromFile(fPath.fileSecondNameMan)[count];
-            patronomic = generateData.getNameFromFile(fPath.filePatronymicMan)[count];
+            patronymic = generateData.getNameFromFile(fPath.filePatronymicMan)[count];
             gender = "М";
         } else {
             lastName = generateData.getNameFromFile(fPath.fileSecondNameWoman)[count];
-            patronomic = generateData.getNameFromFile(fPath.filePatronymicWoman)[count];
+            patronymic = generateData.getNameFromFile(fPath.filePatronymicWoman)[count];
             gender = "Ж";
         }
 
         user.setFirstName(firstName);
         user.setLastName(lastName);
-        user.setPatronymic(patronomic);
+        user.setPatronymic(patronymic);
         user.setGender(gender);
         user.setCountry(generateData.getNameFromFile(fPath.fileCountries)[count]);
         user.setStreet(generateData.getNameFromFile(fPath.fileStreets)[count]);

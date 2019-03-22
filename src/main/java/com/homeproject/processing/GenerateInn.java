@@ -18,7 +18,7 @@ public class GenerateInn {
         // Код региона Москва
         String subject = "77";
 
-        // Налоговая инспецция В москве их 51
+        // Налоговая инспецция в Москве их 51
         String numberTaxInspection = Integer.toString(1 + r.nextInt(51));
         if (numberTaxInspection.length() < 2) {
             numberTaxInspection = '0' + numberTaxInspection;
@@ -30,6 +30,7 @@ public class GenerateInn {
             int k = r.nextInt(9);
             numberTaxRecord = numberTaxRecord + k;
         }
+
         //Промежуточный ИНН без двух последних цифр
         inn = subject + numberTaxInspection + numberTaxRecord;
 

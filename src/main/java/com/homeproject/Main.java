@@ -10,19 +10,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        PathToFiles fPath=new PathToFiles();
-
+        PathToFiles filePath=new PathToFiles();
         StorageUsers storageUsers = new StorageUsers();
         ExcelWorker excelWorker =new ExcelWorker();
         storageUsers.populate();
 
-        excelWorker.createExcelFile(fPath.fileNameXls);
+        excelWorker.createExcelFile(filePath.fileNameXls);
 
         for (User user : storageUsers.get()) {
 
-            excelWorker.reWriteExcel(fPath.fileNameXls,user);// добавляем юзера в эксель
+            excelWorker.reWriteExcel(filePath.fileNameXls,user);// добавляем юзера в эксель
         }
 
-        new PdfWorker().writePDF(fPath.filenamePdf, storageUsers.get()); // создаем pdf
+        new PdfWorker().writePDF(filePath.filenamePdf, storageUsers.get()); // создаем pdf
     }
 }

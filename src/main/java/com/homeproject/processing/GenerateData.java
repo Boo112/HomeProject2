@@ -30,7 +30,6 @@ public class GenerateData {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         int age = Integer.parseInt(simpleDateFormat.format(new Date()))
                 - Integer.parseInt(simpleDateFormat.format(dt));
-
         return age;
     }
 
@@ -45,7 +44,6 @@ public class GenerateData {
                 lines.add(line);
             }
             Collections.shuffle(lines);
-
             name = lines.toArray(new String[0]);
 
         } catch (FileNotFoundException e) {
@@ -61,19 +59,20 @@ public class GenerateData {
 
         boolean itsMan = false;
         try(BufferedReader reader = new BufferedReader(new FileReader(new PathToFiles().fileNameMan))) {
+
+            String[] arrayNames;
             String line;
-            String[] array;
             List<String> lines = new ArrayList();
 
             // получаем мужские имена из файла
             while ((line = reader.readLine()) != null) {
                 lines.add(line);
             }
-            array = lines.toArray(new String[0]);
+            arrayNames = lines.toArray(new String[0]);
 
             // Проверяем содержится ли имя в файле с мужскими именами , если да то считаем что это М
-            for (int i = 0; i < array.length; i++) {
-                if (array[i].equals(name)) {
+            for (int i = 0; i < arrayNames.length; i++) {
+                if (arrayNames[i].equals(name)) {
                     itsMan = true;
                 }
             }

@@ -10,7 +10,7 @@ import java.util.Random;
 public class StorageUsers {
 
     private Random r=new Random();
-    private List<User> users = new ArrayList<User>();
+    private List<User> users = new ArrayList();
     Parser parser=new Parser();
 
     int count= 1+r.nextInt(30);

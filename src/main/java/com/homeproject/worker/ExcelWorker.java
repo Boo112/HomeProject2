@@ -16,8 +16,8 @@ public class ExcelWorker {
 
     public void createExcelFile(String filename) {
 
-        File file = new File(filename);
-        try(FileOutputStream fileOut = new FileOutputStream(file);
+        File excelFile = new File(filename);
+        try(FileOutputStream fileOut = new FileOutputStream(excelFile);
             HSSFWorkbook workbook = new HSSFWorkbook()) {
 
             HSSFSheet sheet = workbook.createSheet("Данные пользователей");
@@ -39,7 +39,7 @@ public class ExcelWorker {
 
             workbook.write(fileOut);
 
-            System.out.println("\n" + "Файл создан. " + "Путь: " + file.getAbsolutePath());
+            System.out.println("\n" + "Файл создан. " + "Путь: " + excelFile.getAbsolutePath());
 
         } catch (IOException e) {
             System.out.println(e);
