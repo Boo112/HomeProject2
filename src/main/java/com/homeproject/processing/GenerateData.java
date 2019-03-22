@@ -30,7 +30,6 @@ public class GenerateData {
 
             while ((line1 = reader.readLine()) != null) {
                 lines.add(line1);
-
             }
             while ((line2 = reader1.readLine()) != null) {
                 lines.add(line2);
@@ -55,79 +54,6 @@ public class GenerateData {
     public Date getDataBirth() {
         long ms = -946771200000L + (Math.abs(r.nextLong()) % (70L * 365 * 24 * 60 * 60 * 1000));
         return new Date(ms);
-    }
-
-    // Генерация валидного ИНН
-    public String getInn() {
-        String inn;
-
-        int[] koeff1 = {7, 2, 4, 10, 3, 5, 9, 4, 6, 8};
-        int[] koeff2 = {3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8};
-
-        //ИНН= Код субьекта(1-2)-Номер налоговой инспеции(2 цифры)-4 - 10 - номер налоговой записи налогоплательщика-11 и 12 - контрольные цифры
-        // Код региона Москва
-        String subject = "77";
-
-        // Налоговая инспецция В москве их 51
-        String numberNI = Integer.toString(1 + r.nextInt(51));
-        if (numberNI.length() < 2) {
-            numberNI = '0' + numberNI; // 5=05
-        }
-
-        // Номер налоговой записи генерируются в произвольном порядке от 000000 до 999999
-        String numberNR = "";
-        for (int i = 0; i < 6; i++) {
-            int k = r.nextInt(9);
-            numberNR = numberNR + k;
-        }
-
-        //Промежуточный ИНН без двух последних цифр
-        inn = subject + numberNI + numberNR;
-
-        int n11; // предпоследнее число инн
-        int n12; // последнее
-
-        // разбиение ИНН на цифры для получение предпоследней цифры n11
-        char[] myChar = inn.toCharArray();
-        int arr = 0;
-
-        for (int i = 0; i < inn.length(); i++) {
-
-            int t = Character.digit(myChar[i], 10);
-
-            arr = arr + t * koeff1[i];
-        }
-
-        n11 = arr % 11;
-        //Если остаток от деления равен 10 то обнуляем его
-        if (n11 == 10) {
-            n11 = 0;
-        }
-
-        inn = inn + n11;
-
-        // разбиение числа на цифры для получение последней цифры n12
-        char[] myChar1 = inn.toCharArray();
-        int arr1 = 0;
-
-        for (int i = 0; i < inn.length(); i++) {
-
-            int tt = Character.digit(myChar1[i], 10);
-
-            arr1 = arr1 + tt * koeff2[i];
-        }
-
-        n12 = arr1 % 11;
-
-        //Если остаток от деления равен 10 то обнуляем его
-        if (n12 == 10) {
-            n12 = 0;
-        }
-
-        // Получаем корректный ИНН
-        inn = inn + n12;
-
-        return inn;
     }
 
     // Считаем возраст

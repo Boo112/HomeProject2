@@ -1,12 +1,13 @@
-package com.homeproject;
+package com.homeproject.helper;
 
+import com.homeproject.User;
 import com.homeproject.processing.Parser;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Users {
+public class StorageUsers {
 
     private Random r=new Random();
     private List<User> users = new ArrayList<User>();

@@ -1,5 +1,6 @@
 package com.homeproject.processing;
 
+import com.homeproject.GenerateInn;
 import com.homeproject.User;
 import com.homeproject.helper.PathToFiles;
 import java.text.SimpleDateFormat;
@@ -10,6 +11,7 @@ public class Parser {
 
     GenerateData generateData =new GenerateData();
     PathToFiles fPath=new PathToFiles();
+    GenerateInn inn=new GenerateInn();
 
     Random r = new Random();
 
@@ -41,7 +43,7 @@ public class Parser {
         user.setGender(gender);
         user.setCountry(generateData.getNameFromFile(fPath.fileCountries)[count]);
         user.setStreet(generateData.getNameFromFile(fPath.fileStreets)[count]);
-        user.setInn(String.valueOf(generateData.getInn()));
+        user.setInn(String.valueOf(inn.getInn()));
         user.setHouse(String.valueOf(1 + r.nextInt(200)));
         user.setFlat(String.valueOf(1 + r.nextInt(500)));
         user.setDateOfBorn(new SimpleDateFormat("dd-MM-yyyy").format(dt));

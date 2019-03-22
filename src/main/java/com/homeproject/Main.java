@@ -2,6 +2,7 @@ package com.homeproject;
 
 
 import com.homeproject.helper.PathToFiles;
+import com.homeproject.helper.StorageUsers;
 import com.homeproject.worker.ExcelWorker;
 import com.homeproject.worker.PdfWorker;
 
@@ -11,17 +12,17 @@ public class Main {
 
         PathToFiles fPath=new PathToFiles();
 
-        Users users = new Users();
+        StorageUsers storageUsers = new StorageUsers();
         ExcelWorker excelWorker =new ExcelWorker();
-        users.populate();
+        storageUsers.populate();
 
         excelWorker.createExcelFile(fPath.fileNameXls);
 
-        for (User user : users.get()) {
+        for (User user : storageUsers.get()) {
 
             excelWorker.reWriteExcel(fPath.fileNameXls,user);// добавляем юзера в эксель
         }
 
-        new PdfWorker().writePDF(fPath.filenamePdf, users.get()); // создаем pdf
+        new PdfWorker().writePDF(fPath.filenamePdf, storageUsers.get()); // создаем pdf
     }
 }
