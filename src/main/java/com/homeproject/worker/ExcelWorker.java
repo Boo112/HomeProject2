@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class ExcelWorker {
 
-    DateHelper dateHelper =new DateHelper();
+    private DateHelper dateHelper =new DateHelper();
 
     public void createExcelFile(String filename) {
 

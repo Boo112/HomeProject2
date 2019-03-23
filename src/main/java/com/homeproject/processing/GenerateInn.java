@@ -4,10 +4,9 @@ import java.util.Random;
 
 public class GenerateInn {
 
-    Random r = new Random();
-    int[] coefficientN2 = {7, 2, 4, 10, 3, 5, 9, 4, 6, 8};
-    int[] coefficientN1 = {3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8};
-
+    private Random r = new Random();
+    private int[] coefficientN2 = {7, 2, 4, 10, 3, 5, 9, 4, 6, 8};
+    private int[] coefficientN1 = {3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8};
 
     // Генерация валидного ИНН
     public String getInn() {

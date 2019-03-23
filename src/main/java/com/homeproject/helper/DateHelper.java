@@ -12,7 +12,6 @@ public class DateHelper {
 
     // Проверка високосный ли год
     public boolean checkLeapYear(int year,int month,int day){
-
         return LocalDate.of(year,month,day).isLeapYear();
     }
 }

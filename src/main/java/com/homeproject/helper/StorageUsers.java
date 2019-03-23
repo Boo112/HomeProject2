@@ -11,9 +11,9 @@ public class StorageUsers {
 
     private Random r=new Random();
     private List<User> users = new ArrayList();
-    GenerateUser generateUser =new GenerateUser();
+    private GenerateUser generateUser =new GenerateUser();
 
-    int count= 1+r.nextInt(30);
+    private int count= 1+r.nextInt(30);
 
     public void populate() {
 

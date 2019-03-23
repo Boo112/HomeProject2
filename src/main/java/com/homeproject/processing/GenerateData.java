@@ -14,8 +14,8 @@ import java.util.*;
 
 public class GenerateData {
 
-    Random r = new Random();
-    DateHelper dateHelper=new DateHelper();
+    private Random r = new Random();
+    private DateHelper dateHelper=new DateHelper();
 
     // Генерация индекса случайным образом от 100000 до 2000000
     public int getIndex() {
@@ -31,9 +31,10 @@ public class GenerateData {
         if(month==2){
             if(!dateHelper.checkLeapYear(year,month,day)) {
                 day = 1 + r.nextInt(28);
-            }else  day = 1 + r.nextInt(29);
+            }else  {
+                day = 1 + r.nextInt(29);
+            }
         }
-
         return LocalDate.of(year, month, day);
     }
 
@@ -93,7 +94,6 @@ public class GenerateData {
         }
         return itsMan;
     }
-
 
 }
 

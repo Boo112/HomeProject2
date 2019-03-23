@@ -16,12 +16,12 @@ import java.io.IOException;
 import java.util.List;
 
 public class PdfWorker {
-    DateHelper dateHelper =new DateHelper();
+    private DateHelper dateHelper =new DateHelper();
 
     public void writePDF(String pdfFileName, List<User> users) {
 
         PDPage pdfPage = new PDPage(new PDRectangle(PDRectangle.A4.getHeight(), PDRectangle.A4.getWidth()));
-        File pdf = new File(pdfFileName);
+        File pdfFile = new File(pdfFileName);
 
         try(PDDocument mainDocument = new PDDocument()) {
 
@@ -79,9 +79,9 @@ public class PdfWorker {
         table.draw();
 
         mainDocument.addPage(pdfPage);
-        mainDocument.save(pdf);
+        mainDocument.save(pdfFile);
 
-        System.out.println("\n" + "Файл создан. " + "Путь: " + pdf.getAbsolutePath());
+        System.out.println("\n" + "Файл создан. " + "Путь: " + pdfFile.getAbsolutePath());
 
         } catch (IOException e) {
 

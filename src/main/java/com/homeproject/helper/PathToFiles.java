@@ -2,9 +2,7 @@ package com.homeproject.helper;
 
 import java.io.File;
 
-
 public class PathToFiles {
-
     public String fileNameXls = "Users.xls";
     public String filenamePdf = "Users.pdf";
     public String fileNameMan = "Resources" + File.separator + "nameMan.txt";

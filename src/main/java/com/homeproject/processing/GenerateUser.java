@@ -7,11 +7,10 @@ import java.util.Random;
 
 public class GenerateUser {
 
-    GenerateData generateData =new GenerateData();
-    PathToFiles fPath=new PathToFiles();
-    GenerateInn inn=new GenerateInn();
-
-    Random r = new Random();
+    private GenerateData generateData =new GenerateData();
+    private PathToFiles fPath=new PathToFiles();
+    private GenerateInn inn=new GenerateInn();
+    private Random r = new Random();
 
     // Получаем пользователей из локальной базы
     public User getUserFromLocalDatabase(int count) {
@@ -20,14 +19,13 @@ public class GenerateUser {
         String lastName;
         String patronymic;
         String gender;
-        LocalDate dt = generateData.getDataBirth();
+        LocalDate dateBirth = generateData.getDataBirth();
 
         if(count % 2 == 0){
             firstName=generateData.getNameFromFile(fPath.fileNameMan)[count];
         }else {
             firstName=generateData.getNameFromFile(fPath.fileNameWoman)[count];
         }
-
         // Тут получаем остальные данные в зависимости от пола юзера
         if (generateData.getGender(firstName)) {
             lastName = generateData.getNameFromFile(fPath.fileSecondNameMan)[count];
@@ -38,7 +36,6 @@ public class GenerateUser {
             patronymic = generateData.getNameFromFile(fPath.filePatronymicWoman)[count];
             gender = "Ж";
         }
-
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setPatronymic(patronymic);
@@ -48,8 +45,8 @@ public class GenerateUser {
         user.setInn(String.valueOf(inn.getInn()));
         user.setHouse(String.valueOf(1 + r.nextInt(200)));
         user.setFlat(String.valueOf(1 + r.nextInt(500)));
-        user.setDateOfBorn(dt);
-        user.setAge(String.valueOf(generateData.getAge(dt)));
+        user.setDateOfBorn(dateBirth);
+        user.setAge(String.valueOf(generateData.getAge(dateBirth)));
         user.setIndex(String.valueOf(generateData.getIndex()));
         user.setCity(generateData.getNameFromFile(fPath.fileCity)[count]);
         user.setState(generateData.getNameFromFile(fPath.fileOblast)[count]);
