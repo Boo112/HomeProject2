@@ -1,12 +1,11 @@
 package com.homeproject.processing;
 
-import com.homeproject.User;
+import com.homeproject.models.User;
 import com.homeproject.helper.PathToFiles;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Random;
 
-public class Parser {
+public class GenerateUser {
 
     GenerateData generateData =new GenerateData();
     PathToFiles fPath=new PathToFiles();
@@ -21,7 +20,7 @@ public class Parser {
         String lastName;
         String patronymic;
         String gender;
-        Date dt = generateData.getDataBirth();
+        LocalDate dt = generateData.getDataBirth();
 
         if(count % 2 == 0){
             firstName=generateData.getNameFromFile(fPath.fileNameMan)[count];
@@ -30,7 +29,7 @@ public class Parser {
         }
 
         // Тут получаем остальные данные в зависимости от пола юзера
-        if (generateData.getGender(firstName) == true) {
+        if (generateData.getGender(firstName)) {
             lastName = generateData.getNameFromFile(fPath.fileSecondNameMan)[count];
             patronymic = generateData.getNameFromFile(fPath.filePatronymicMan)[count];
             gender = "М";
@@ -49,7 +48,7 @@ public class Parser {
         user.setInn(String.valueOf(inn.getInn()));
         user.setHouse(String.valueOf(1 + r.nextInt(200)));
         user.setFlat(String.valueOf(1 + r.nextInt(500)));
-        user.setDateOfBorn(new SimpleDateFormat("dd-MM-yyyy").format(dt));
+        user.setDateOfBorn(dt);
         user.setAge(String.valueOf(generateData.getAge(dt)));
         user.setIndex(String.valueOf(generateData.getIndex()));
         user.setCity(generateData.getNameFromFile(fPath.fileCity)[count]);

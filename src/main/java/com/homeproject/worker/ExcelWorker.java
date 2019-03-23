@@ -1,6 +1,7 @@
 package com.homeproject.worker;
 
-import com.homeproject.User;
+import com.homeproject.helper.DateHelper;
+import com.homeproject.models.User;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -13,6 +14,8 @@ import java.io.IOException;
 
 
 public class ExcelWorker {
+
+    DateHelper dateHelper =new DateHelper();
 
     public void createExcelFile(String filename) {
 
@@ -62,7 +65,7 @@ public class ExcelWorker {
             row.createCell(2).setCellValue(user.getPatronymic());
             row.createCell(4).setCellValue(user.getGender());
             row.createCell(3).setCellValue(user.getAge());
-            row.createCell(5).setCellValue(user.getDateOfBorn());
+            row.createCell(5).setCellValue(dateHelper.formattingDate(user.getDateOfBorn()));
             row.createCell(6).setCellValue(user.getInn());
             row.createCell(7).setCellValue(user.getIndex());
             row.createCell(8).setCellValue(user.getCountry());
@@ -72,8 +75,8 @@ public class ExcelWorker {
             row.createCell(12).setCellValue(user.getHouse());
             row.createCell(13).setCellValue(user.getFlat());
 
-            int LastCellNum=row.getLastCellNum()-1;
-            for (int i = 0; i < LastCellNum; i++) {
+            int lastCellNum=row.getLastCellNum()-1;
+            for (int i = 0; i < lastCellNum; i++) {
                 sheet.autoSizeColumn(i);
             }
 

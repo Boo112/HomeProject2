@@ -11,34 +11,30 @@ public class GenerateInn {
 
     // Генерация валидного ИНН
     public String getInn() {
-        String inn;
-
+        StringBuilder inn=new StringBuilder();
         //ИНН= Код субьекта(1-2)-Номер налоговой инспеции(2 цифры)-4 -
         // 10 - номер налоговой записи налогоплательщика-11 и 12 - контрольные цифры
         // Код региона Москва
-        String subject = "77";
+        inn.append(77);
 
         // Налоговая инспецция в Москве их 51
-        String numberTaxInspection = Integer.toString(1 + r.nextInt(51));
-        if (numberTaxInspection.length() < 2) {
+        int numberTaxInspection = 1 + r.nextInt(51);
+        if (numberTaxInspection < 10) {
             numberTaxInspection = '0' + numberTaxInspection;
         }
+        inn.append(numberTaxInspection);
 
         // Номер налоговой записи генерируются в произвольном порядке от 000000 до 999999
-        String numberTaxRecord = "";
         for (int i = 0; i < 6; i++) {
             int k = r.nextInt(9);
-            numberTaxRecord = numberTaxRecord + k;
+            inn.append(k);
         }
-
-        //Промежуточный ИНН без двух последних цифр
-        inn = subject + numberTaxInspection + numberTaxRecord;
-
         // К промежуточному ИНН добавляем предпоследнее число
-        inn = inn + getDigit(inn,coefficientN2);
-
+        inn.append(getDigit(inn.toString(),coefficientN2));
         // получаем полный валидный ИНН, добавляя последнее число
-        return inn + getDigit(inn,coefficientN1);
+        inn.append(getDigit(inn.toString(),coefficientN1));
+
+        return inn.toString();
     }
 
     //Получение последних цифр ИНН

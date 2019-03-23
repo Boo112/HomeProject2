@@ -2,7 +2,8 @@ package com.homeproject.worker;
 
 import be.quodlibet.boxable.BaseTable;
 import be.quodlibet.boxable.Row;
-import com.homeproject.User;
+import com.homeproject.helper.DateHelper;
+import com.homeproject.models.User;
 import com.homeproject.helper.PathToFiles;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -15,22 +16,23 @@ import java.io.IOException;
 import java.util.List;
 
 public class PdfWorker {
+    DateHelper dateHelper =new DateHelper();
 
     public void writePDF(String pdfFileName, List<User> users) {
 
-        PDPage myPage = new PDPage(new PDRectangle(PDRectangle.A4.getHeight(), PDRectangle.A4.getWidth()));
+        PDPage pdfPage = new PDPage(new PDRectangle(PDRectangle.A4.getHeight(), PDRectangle.A4.getWidth()));
         File pdf = new File(pdfFileName);
 
         try(PDDocument mainDocument = new PDDocument()) {
 
         float margin = 10;
-        float yStartNewPage = myPage.getMediaBox().getHeight() - (2 * margin);
-        float tableWidth = myPage.getMediaBox().getWidth() - (2 * margin);
+        float yStartNewPage = pdfPage.getMediaBox().getHeight() - (2 * margin);
+        float tableWidth = pdfPage.getMediaBox().getWidth() - (2 * margin);
         float bottomMargin = 70;
         float yPosition = 10;
 
         BaseTable table = new BaseTable(yPosition, yStartNewPage, bottomMargin, tableWidth, margin,
-                mainDocument, myPage, true, true);
+                mainDocument, pdfPage, true, true);
 
         PDFont font3 = PDType0Font.load(mainDocument, new File(new PathToFiles().fileFont));
 
@@ -63,7 +65,7 @@ public class PdfWorker {
             row.createCell(10, us.getPatronymic()).setFont(font3);
             row.createCell(4, us.getAge()).setFont(font3);
             row.createCell(4, us.getGender()).setFont(font3);
-            row.createCell(7, us.getDateOfBorn()).setFont(font3);
+            row.createCell(7, dateHelper.formattingDate(us.getDateOfBorn())).setFont(font3);
             row.createCell(8, us.getInn()).setFont(font3);
             row.createCell(7, us.getIndex()).setFont(font3);
             row.createCell(7, us.getCountry()).setFont(font3);
@@ -76,7 +78,7 @@ public class PdfWorker {
         }
         table.draw();
 
-        mainDocument.addPage(myPage);
+        mainDocument.addPage(pdfPage);
         mainDocument.save(pdf);
 
         System.out.println("\n" + "Файл создан. " + "Путь: " + pdf.getAbsolutePath());

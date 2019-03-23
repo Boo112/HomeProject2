@@ -1,17 +1,21 @@
 package com.homeproject.processing;
 
+import com.homeproject.helper.DateHelper;
 import com.homeproject.helper.PathToFiles;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
+
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.*;
 
 public class GenerateData {
 
     Random r = new Random();
+    DateHelper dateHelper=new DateHelper();
 
     // Генерация индекса случайным образом от 100000 до 2000000
     public int getIndex() {
@@ -19,18 +23,23 @@ public class GenerateData {
     }
 
     // Генерация даты рождения
-    public Date getDataBirth() {
-        long ms = -946771200000L + (Math.abs(r.nextLong()) % (70L * 365 * 24 * 60 * 60 * 1000));
-        return new Date(ms);
+    public LocalDate getDataBirth() {
+        int year=1930+r.nextInt(85);
+        int month=1+r.nextInt(12);
+        int day=1+r.nextInt(30);
+
+        if(month==2){
+            if(!dateHelper.checkLeapYear(year,month,day)) {
+                day = 1 + r.nextInt(28);
+            }else  day = 1 + r.nextInt(29);
+        }
+
+        return LocalDate.of(year, month, day);
     }
 
     // Считаем возраст
-    public int getAge(Date dt) {
-        String pattern = "yyyy";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        int age = Integer.parseInt(simpleDateFormat.format(new Date()))
-                - Integer.parseInt(simpleDateFormat.format(dt));
-        return age;
+    public int getAge(LocalDate dt) {
+        return Period.between(dt,LocalDate.now()).getYears();
     }
 
     public String[] getNameFromFile(String fileName) {
@@ -71,7 +80,8 @@ public class GenerateData {
             arrayNames = lines.toArray(new String[0]);
 
             // Проверяем содержится ли имя в файле с мужскими именами , если да то считаем что это М
-            for (int i = 0; i < arrayNames.length; i++) {
+            int count=arrayNames.length;
+            for (int i = 0; i < count; i++) {
                 if (arrayNames[i].equals(name)) {
                     itsMan = true;
                 }
@@ -83,6 +93,7 @@ public class GenerateData {
         }
         return itsMan;
     }
+
 
 }
 

@@ -1,4 +1,6 @@
-package com.homeproject;
+package com.homeproject.models;
+
+import java.time.LocalDate;
 
 public class User {
     private String firstName;
@@ -6,7 +8,7 @@ public class User {
     private String patronymic;
     private String age;
     private String gender;
-    private String dateOfBorn;
+    private LocalDate dateOfBorn;
     private String inn;
     private String index;
     private String country;
@@ -48,7 +50,7 @@ public class User {
         return street;
     }
 
-    public String getDateOfBorn(){
+    public LocalDate getDateOfBorn(){
         return dateOfBorn;
     }
 
@@ -93,7 +95,7 @@ public class User {
         this.gender = gender;
     }
 
-    public void setDateOfBorn(String dateOfBorn) {
+    public void setDateOfBorn(LocalDate dateOfBorn) {
         this.dateOfBorn = dateOfBorn;
     }
 
