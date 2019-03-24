@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class GenerateInn {
 
-    private Random r = new Random();
+    private Random random = new Random();
     private int[] coefficientN2 = {7, 2, 4, 10, 3, 5, 9, 4, 6, 8};
     private int[] coefficientN1 = {3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8};
 
@@ -17,7 +17,7 @@ public class GenerateInn {
         inn.append(77);
 
         // Налоговая инспецция в Москве их 51
-        int numberTaxInspection = 1 + r.nextInt(51);
+        int numberTaxInspection = 1 + random.nextInt(51);
         if (numberTaxInspection < 10) {
             numberTaxInspection = '0' + numberTaxInspection;
         }
@@ -25,7 +25,7 @@ public class GenerateInn {
 
         // Номер налоговой записи генерируются в произвольном порядке от 000000 до 999999
         for (int i = 0; i < 6; i++) {
-            int k = r.nextInt(9);
+            int k = random.nextInt(9);
             inn.append(k);
         }
         // К промежуточному ИНН добавляем предпоследнее число

@@ -9,11 +9,11 @@ import java.util.Random;
 
 public class StorageUsers {
 
-    private Random r=new Random();
+    private Random random=new Random();
     private List<User> users = new ArrayList();
     private GenerateUser generateUser =new GenerateUser();
 
-    private int count= 1+r.nextInt(30);
+    private int count= 1+random.nextInt(30);
 
     public void populate() {
 

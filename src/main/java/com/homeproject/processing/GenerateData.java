@@ -14,25 +14,25 @@ import java.util.*;
 
 public class GenerateData {
 
-    private Random r = new Random();
+    private Random random = new Random();
     private DateHelper dateHelper=new DateHelper();
 
     // Генерация индекса случайным образом от 100000 до 2000000
     public int getIndex() {
-        return 100000 + r.nextInt(100000);
+        return 100000 + random.nextInt(100000);
     }
 
     // Генерация даты рождения
     public LocalDate getDataBirth() {
-        int year=1930+r.nextInt(85);
-        int month=1+r.nextInt(12);
-        int day=1+r.nextInt(30);
+        int year=1930+random.nextInt(85);
+        int month=1+random.nextInt(12);
+        int day=1+random.nextInt(30);
 
         if(month==2){
             if(!dateHelper.checkLeapYear(year,month,day)) {
-                day = 1 + r.nextInt(28);
+                day = 1 + random.nextInt(28);
             }else  {
-                day = 1 + r.nextInt(29);
+                day = 1 + random.nextInt(29);
             }
         }
         return LocalDate.of(year, month, day);

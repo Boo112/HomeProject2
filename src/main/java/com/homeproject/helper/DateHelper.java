@@ -6,8 +6,8 @@ import java.time.format.DateTimeFormatter;
 public class DateHelper {
 
     // Приводим дату в формат dd-MM-yyyy
-    public String formattingDate(LocalDate dateofBirth){
-        return dateofBirth.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+    public String formattingDate(LocalDate dateOfBirth){
+        return dateOfBirth.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     }
 
     // Проверка високосный ли год

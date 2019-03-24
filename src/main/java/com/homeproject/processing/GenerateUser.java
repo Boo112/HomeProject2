@@ -10,7 +10,7 @@ public class GenerateUser {
     private GenerateData generateData =new GenerateData();
     private PathToFiles fPath=new PathToFiles();
     private GenerateInn inn=new GenerateInn();
-    private Random r = new Random();
+    private Random random = new Random();
 
     // Получаем пользователей из локальной базы
     public User getUserFromLocalDatabase(int count) {
@@ -43,8 +43,8 @@ public class GenerateUser {
         user.setCountry(generateData.getNameFromFile(fPath.fileCountries)[count]);
         user.setStreet(generateData.getNameFromFile(fPath.fileStreets)[count]);
         user.setInn(String.valueOf(inn.getInn()));
-        user.setHouse(String.valueOf(1 + r.nextInt(200)));
-        user.setFlat(String.valueOf(1 + r.nextInt(500)));
+        user.setHouse(String.valueOf(1 + random.nextInt(200)));
+        user.setFlat(String.valueOf(1 + random.nextInt(500)));
         user.setDateOfBorn(dateBirth);
         user.setAge(String.valueOf(generateData.getAge(dateBirth)));
         user.setIndex(String.valueOf(generateData.getIndex()));
